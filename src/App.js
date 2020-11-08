@@ -16,13 +16,13 @@ function App() {
   let handleName = () => alert(InfoPerson.fullName ? InfoPerson.fullName : "Hello User")
 
   return (
-    <div className="App">
-      <div className="App-header">
+    <div  style={{textAlign: "center"}}>
+      <div className="App-header" style={{backgroundColor: "#282c34"}}>
 
         <ProfileComponent
           info={InfoPerson}
           alerte={handleName}
-          photo={<img src={photo} alt="image de mon profile" />}
+          photo={<img src={photo} alt=" mon profile" />}
         />
       </div>
     </div>
