@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import ProfileComponent from './profile/ProfileComponent'
+import photo from './PhotoProfil.jpg'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
+
+  
+  let InfoPerson = {
+    fullName: "SAID SANA",
+    bio: " Je me nomme Said Sana, Tunisienne âgé de 34 ans. Après un parcours secondaire brillant couronné par l'admission au baccalauréat en 2005, j'ai pu continuer mes études supérieurs au sein de l'Institut Supérieur des Etudes Technologique et j'ai eu mon diplome de Technicien Supérieur en Réseaux Informatique en 2009 avec mention Trés Bien. Et étant donné que le métier de Développeur Web est ma passion première, j'ai continué le chemain d'informatique en me formant sur le developpement web et j'ai eu un FULLSTACK-javascript formation et j'aimerais être responsable de la vie d'un site web au sein d'une entreprise informatique  sérieuse en vue d'accroître mes compétences pour mes objectifs futurs.",
+    profession: "Développeur Web Genior",
+  }
+
+  let handleName = () => alert(InfoPerson.fullName ? InfoPerson.fullName : "Hello User")
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-header">
+
+        <ProfileComponent
+          info={InfoPerson}
+          alerte={handleName}
+          photo={<img src={photo} alt="image de mon profile" />}
+        />
+      </div>
     </div>
   );
 }
